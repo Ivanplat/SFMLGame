@@ -12,10 +12,10 @@ sf::View PlayerCamera::ViewMap()
 {
     switch (Game->GetCameraAction())
     {
-    case 0: View.move(0.1f * Game->GetTime(), 0); break;
-    case 1: View.move(0, 0.1f * Game->GetTime()); break;
-    case 2: View.move(-0.1f * Game->GetTime(), 0); break;
-    case 3: View.move(0, -0.1f * Game->GetTime()); break;
+    case 0: View.move(0.1f *     Game->GetTime(), 0);  break;
+    case 1: View.move(0, 0.1f *  Game->GetTime());     break;
+    case 2: View.move(-0.1f *    Game->GetTime(), 0);  break;
+    case 3: View.move(0, -0.1f * Game->GetTime());     break;
     case 4: View.zoom(1.01f); break;
     case 5: View.zoom(0.99f); break;
     }
@@ -27,9 +27,9 @@ sf::View PlayerCamera::GetPlayerCoordinatesForView(float x, float y)
     float tempX = x;
     float tempY = y;
 
-    if (x < 320){tempX = 320;}
-    if (y < 240){tempY = 240;}
-    if (y > 554){tempY = 554;}
+    if (x < 320){tempX = 320;}          //Set end coordinates for the camera 
+    if (y < 240){tempY = 240;}          //Set end coordinates for the camera 
+    if (y > 554){tempY = 554;}          //Set end coordinates for the camera 
 
     View.setCenter(tempX, tempY);
     return View;
