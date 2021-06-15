@@ -15,6 +15,7 @@ int main()
 
 	sf::Sprite heroSprite;
 	heroSprite.setTexture(heroTexture);
+	heroSprite.setTextureRect(sf::IntRect(0, 192, 96, 96));
 	heroSprite.setPosition(50, 25);
 
 	while (window.isOpen())
