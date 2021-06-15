@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "SFML/Graphics.hpp"
+#include "PlayerCamera.h"
 class Character
 {
 public:
@@ -11,7 +12,9 @@ public:
 		CharacterTexture.loadFromImage(CharacterImage);
 		CharacterSprite.setTexture(CharacterTexture);
 		CharacterSprite.setTextureRect(sf::IntRect(w, h, w, h));
+		Camera = PlayerCamera();
 	}
+
 public:
 	float X = 0;
 	float Y = 0;
@@ -21,6 +24,7 @@ public:
 	float dY = 0;
 	float Speed = 0;
 	int Direction = 0;
+	PlayerCamera Camera;
 public:
 	sf::String FileName;
 	sf::Image CharacterImage;

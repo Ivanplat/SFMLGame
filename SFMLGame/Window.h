@@ -11,6 +11,7 @@ public:
 	Window& operator=(const Window&&) = delete; // Delete assigment and copy operations for this class
 	Window(const Window&) = delete;				// Delete assigment and copy operations for this class
 	Window(const Window&&) = delete;			// Delete assigment and copy operations for this class
+	~Window() = default;
 public:
 	static Window* Instance();					//Function for getting the singletone instance
 	void Init();								//Initialization the window	

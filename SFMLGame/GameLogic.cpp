@@ -1,6 +1,7 @@
 #include "GameLogic.h"
 #include "GameLog.h"
 
+
 GameLogic* GameLogic::Instance()
 {
     static GameLogic gl;

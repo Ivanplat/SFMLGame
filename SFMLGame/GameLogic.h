@@ -11,6 +11,7 @@ public:
 	GameLogic& operator=(const GameLogic&&) = delete;	// Delete assigment and copy operations for this class
 	GameLogic(const GameLogic&) = delete;				// Delete assigment and copy operations for this class
 	GameLogic(const GameLogic&&) = delete;				// Delete assigment and copy operations for this class
+	~GameLogic() = default;
 public:
 	static GameLogic* Instance();						//Function for getting the singletone instance
 	int CheckPlayerDirection();							//Returns value from 0 to 3, but in case of no direction returns -1	
