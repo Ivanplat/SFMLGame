@@ -2,7 +2,10 @@
 #include <iostream>
 #include "SFML/Graphics.hpp"
 #include "PlayerCamera.h"
-class Character
+#include "Map.h"
+#include "InteractionInterface.h"
+
+class Character : public BaseGameActor
 {
 public:
 	Character(sf::String fn, float x, float y, float w, float h) : FileName(fn), X(x), Y(y), Width(w), Height(h)
@@ -33,5 +36,6 @@ public:
 public:
 	void Move();
 	void Update();
+	void InteractWithMap();
 };
 

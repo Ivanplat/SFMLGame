@@ -1,17 +1,20 @@
 #pragma once
+#include <iostream>
+#include <vector>
 #include "SFML/Graphics.hpp"
+#include "InteractionInterface.h"
+
 class Map
 {
 public:
-
-	Map(sf::String fn) : FileName(fn)
-	{
-		MapImage.loadFromFile("./images/" + FileName);
-		MapTexture.loadFromImage(MapImage);
-		MapSprite.setTexture(MapTexture);
-	}
-public:
+	static Map* Instance();
+	void Init(sf::String fn);
 	void DrawMap(sf::RenderWindow& window);
+	sf::String* GetMap();
+public:
+	void InteractWithMap(BaseGameActor* Caller);
+private:
+	Map() = default;
 private:
 	const int MAP_HEIGHT = 25;
 	const int MAP_WIDTH = 40;

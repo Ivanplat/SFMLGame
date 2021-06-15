@@ -151,19 +151,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BaseGameActor.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="GameLog.cpp" />
     <ClCompile Include="GameLogic.cpp" />
+    <ClCompile Include="InteractionInterface.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="PlayerCamera.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseGameActor.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="GameLog.h" />
     <ClInclude Include="GameLogic.h" />
     <ClInclude Include="GlobalDefiner.h" />
+    <ClInclude Include="InteractionInterface.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="PlayerCamera.h" />
     <ClInclude Include="Window.h" />

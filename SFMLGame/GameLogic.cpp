@@ -88,3 +88,8 @@ sf::Clock& GameLogic::GetClock()
 {
 	return Clock;
 }
+
+std::vector<sf::String>& GameLogic::GetMapTitle()
+{
+	return MapTitle;
+}

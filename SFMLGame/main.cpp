@@ -14,11 +14,12 @@ int main()
 	GameLog::Instance();
 	GameLogic::Instance();
 	Window::Instance();
+	Map::Instance();
 
 	GameWindow->Init();
+	GMap->Init("map.png");
 
 	Character MainCharacter("hero.png", 250.0f, 250.0f, 96.0f, 96.0f);
-	Map GameMap("map.png");
 
 	while (GameWindow->MainWindow->isOpen())
 	{
@@ -28,7 +29,7 @@ int main()
 		MainCharacter.Camera.ViewMap();
 		GameWindow->MainWindow->setView(MainCharacter.Camera.View);
 		GameWindow->MainWindow->clear(sf::Color(128, 106, 89));
-		GameMap.DrawMap(*GameWindow->MainWindow);
+		GMap->DrawMap(*GameWindow->MainWindow);
 		GameWindow->MainWindow->draw(MainCharacter.CharacterSprite);
 		GameWindow->MainWindow->display();
 	}

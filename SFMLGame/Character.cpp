@@ -1,6 +1,7 @@
 #include "Character.h"
 #include "GlobalDefiner.h"
 #include "GameLogic.h"
+#include "GameLog.h"
 
 void Character::Move()
 {
@@ -17,6 +18,7 @@ void Character::Move()
 
 	Speed = 0;
 	CharacterSprite.setPosition(X, Y);
+	InteractWithMap();
 }
 
 void Character::Update()
@@ -62,4 +64,9 @@ void Character::Update()
 	}
 	Move();
 
+}
+
+void Character::InteractWithMap()
+{
+	GMap->InteractWithMap(this);
 }

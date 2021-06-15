@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <vector>
 #include "SFML/Graphics.hpp"
 
 /*GameLogic class as sigletone pattern*/
@@ -22,10 +23,12 @@ public:
 	int GetCurrentFrame();
 	float GetTime();
 	sf::Clock& GetClock();
+	std::vector<sf::String>& GetMapTitle();
 private:
 	sf::Clock Clock;
 	int CurrentFrame = 0;
 	float Time;
+	std::vector<sf::String> MapTitle;
 
 private:
 	GameLogic() = default;
