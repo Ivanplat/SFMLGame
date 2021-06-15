@@ -27,7 +27,7 @@ public:
 private:
 	sf::Clock Clock;
 	int CurrentFrame = 0;
-	float Time;
+	float Time = 0;
 	std::vector<sf::String> MapTitle;
 
 private:

@@ -32,7 +32,7 @@ void Character::Update()
 		Speed = 0.1f;
 		Game->UpdateFrame();
 		CharacterSprite.setTextureRect(sf::IntRect(96 * int(Game->GetCurrentFrame()), 96, 96, 96));
-		Camera.GetPlayerCoordinatesForView(X, Y);
+		Camera->GetPlayerCoordinatesForView(X, Y);
 	}
 	break;
 	case 1:
@@ -41,7 +41,7 @@ void Character::Update()
 		Speed = 0.1f;
 		Game->UpdateFrame();
 		CharacterSprite.setTextureRect(sf::IntRect(96 * int(Game->GetCurrentFrame()) + 96, 96, -96, 96));
-		Camera.GetPlayerCoordinatesForView(X, Y);
+		Camera->GetPlayerCoordinatesForView(X, Y);
 	}
 	break;
 	case 2:
@@ -50,7 +50,7 @@ void Character::Update()
 		Speed = 0.1f;
 		Game->UpdateFrame();
 		CharacterSprite.setTextureRect(sf::IntRect(96 * int(Game->GetCurrentFrame()), 288, 96, 96));
-		Camera.GetPlayerCoordinatesForView(X, Y);
+		Camera->GetPlayerCoordinatesForView(X, Y);
 	}break;
 	case 3:
 	{
@@ -58,7 +58,7 @@ void Character::Update()
 		Speed = 0.1f;
 		Game->UpdateFrame();
 		CharacterSprite.setTextureRect(sf::IntRect(96 * int(Game->GetCurrentFrame()), 0, 96, 96));
-		Camera.GetPlayerCoordinatesForView(X, Y);
+		Camera->GetPlayerCoordinatesForView(X, Y);
 	}
 	break;
 	}

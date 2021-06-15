@@ -4,6 +4,7 @@
 #include "PlayerCamera.h"
 #include "Map.h"
 #include "InteractionInterface.h"
+#include "PlayerScoreComponent.h"
 
 class Character : public BaseGameActor
 {
@@ -15,7 +16,8 @@ public:
 		CharacterTexture.loadFromImage(CharacterImage);
 		CharacterSprite.setTexture(CharacterTexture);
 		CharacterSprite.setTextureRect(sf::IntRect(w, h, w, h));
-		Camera = PlayerCamera();
+		Camera		   = CreateDefaultSubobject<PlayerCamera>();
+		ScoreComponent = CreateDefaultSubobject<PlayerScoreComponent>();
 	}
 
 public:
@@ -27,7 +29,8 @@ public:
 	float dY = 0;
 	float Speed = 0;
 	int Direction = 0;
-	PlayerCamera Camera;
+	PlayerCamera* Camera;
+	PlayerScoreComponent* ScoreComponent;
 public:
 	sf::String FileName;
 	sf::Image CharacterImage;

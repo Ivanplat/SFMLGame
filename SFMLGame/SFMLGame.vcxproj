@@ -151,7 +151,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BaseActorComponent.cpp" />
     <ClCompile Include="BaseGameActor.cpp" />
+    <ClCompile Include="BaseGameObject.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="GameLog.cpp" />
     <ClCompile Include="GameLogic.cpp" />
@@ -159,10 +161,13 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="PlayerCamera.cpp" />
+    <ClCompile Include="PlayerScoreComponent.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseActorComponent.h" />
     <ClInclude Include="BaseGameActor.h" />
+    <ClInclude Include="BaseGameObject.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="GameLog.h" />
     <ClInclude Include="GameLogic.h" />
@@ -170,6 +175,7 @@
     <ClInclude Include="InteractionInterface.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="PlayerCamera.h" />
+    <ClInclude Include="PlayerScoreComponent.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

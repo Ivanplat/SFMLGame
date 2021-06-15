@@ -1,7 +1,8 @@
 #pragma once
 #include <iostream>
 #include "SFML/Graphics.hpp"
-class PlayerCamera
+#include "BaseActorComponent.h"
+class PlayerCamera : BaseActorComponent
 {
 public:
 	PlayerCamera() = default;

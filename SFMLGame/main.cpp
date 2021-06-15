@@ -26,8 +26,8 @@ int main()
 		Game->UpdateTime();
 		GameWindow->EventHandler();
 		MainCharacter.Update();
-		MainCharacter.Camera.ViewMap();
-		GameWindow->MainWindow->setView(MainCharacter.Camera.View);
+		MainCharacter.Camera->ViewMap();
+		GameWindow->MainWindow->setView(MainCharacter.Camera->View);
 		GameWindow->MainWindow->clear(sf::Color(128, 106, 89));
 		GMap->DrawMap(*GameWindow->MainWindow);
 		GameWindow->MainWindow->draw(MainCharacter.CharacterSprite);
