@@ -16,8 +16,8 @@ sf::View PlayerCamera::ViewMap()
     case 1: View.move(0, 0.1f *  Game->GetTime());     break;
     case 2: View.move(-0.1f *    Game->GetTime(), 0);  break;
     case 3: View.move(0, -0.1f * Game->GetTime());     break;
-    case 4: View.zoom(1.01f); break;
-    case 5: View.zoom(0.99f); break;
+    case 4: View.zoom(1.01f);                          break;
+    case 5: View.zoom(0.99f);                          break;
     }
     return View;
 }
