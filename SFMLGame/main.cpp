@@ -1,5 +1,6 @@
 #include <iostream>
 #include "SFML/Graphics.hpp"
+#include "GameLog.h"
 
 
 int main()
@@ -15,7 +16,6 @@ int main()
 	sf::Sprite heroSprite;
 	heroSprite.setTexture(heroTexture);
 	heroSprite.setPosition(50, 25);
-
 
 	while (window.isOpen())
 	{
