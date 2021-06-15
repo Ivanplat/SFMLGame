@@ -1,4 +1,5 @@
 #include "GameLog.h"
+#include <Windows.h>
 
 GameLog* GameLog::Instance()
 {
@@ -9,5 +10,11 @@ GameLog* GameLog::Instance()
 void GameLog::ShowCurretPath()
 {
 	std::cout << std::filesystem::current_path() << std::endl;
+}
+
+void GameLog::ShowErrorMessage(std::string message)
+{
+	HWND hWnd{};
+	MessageBox(hWnd, L"Message", L"Error", MB_ICONERROR);
 }
 

@@ -1,31 +1,27 @@
 #include <iostream>
 #include "SFML/Graphics.hpp"
 #include "GameLog.h"
+#include "GameLogic.h"
+#include "Character.h"
+
+#include "GlobalDefiner.h"
 
 
 int main()
 {
+	GameLog::Instance();
+	GameLogic::Instance();
+
 	sf::RenderWindow window(sf::VideoMode(800, 600), "My SFML C++ Game");
 	
-	sf::Image heroImage;
-	heroImage.loadFromFile("images/hero.png");
+	Character MainCharacter("hero.png", 250.0f, 250.0f, 96.0f, 96.0f);
 
-	sf::Texture heroTexture;
-	heroTexture.loadFromImage(heroImage);
-
-	sf::Sprite heroSprite;
-	heroSprite.setTexture(heroTexture);
-	heroSprite.setTextureRect(sf::IntRect(0, 192, 96, 96));
-	heroSprite.setPosition(50, 25);
-
-	sf::Clock clock;
 	float currentFrame = 0.0f;
 
 	while (window.isOpen())
 	{
-		float time = clock.getElapsedTime().asMicroseconds();
-		clock.restart();
-		time /= 800;
+		Game->UpdateTime();
+
 		sf::Event e;
 		while (window.pollEvent(e))
 		{
@@ -34,50 +30,10 @@ int main()
 				window.close();
 			}
 		}
-		if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || (sf::Keyboard::isKeyPressed(sf::Keyboard::A))))
-		{
-			currentFrame += 0.005 * time;
-			if (currentFrame > 3.0f)
-			{
-				currentFrame -= 3.0f;
-			}
-			heroSprite.setTextureRect(sf::IntRect(96 * int(currentFrame), 96, 96, 96));
-			heroSprite.move(-0.1f*time, 0.0f);
-		}
-		if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || (sf::Keyboard::isKeyPressed(sf::Keyboard::D))))
-		{
-			currentFrame += 0.005 * time;
-			if (currentFrame > 3.0f)
-			{
-				currentFrame -= 3.0f;
-			}
-			heroSprite.setTextureRect(sf::IntRect(96 * int(currentFrame) + 96, 96, -96, 96));
-			heroSprite.move(0.1f*time, 0.0f);
-		}
-		if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || (sf::Keyboard::isKeyPressed(sf::Keyboard::W))))
-		{
-			currentFrame += 0.005 * time;
-			if (currentFrame > 3.0f)
-			{
-				currentFrame -= 3.0f;
-			}
-			heroSprite.setTextureRect(sf::IntRect(96 * int(currentFrame), 288, 96, 96));
-			heroSprite.move(0.0f, -0.1f*time);
-		}
-		if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Down) || (sf::Keyboard::isKeyPressed(sf::Keyboard::S))))
-		{
-			currentFrame += 0.005 * time;
-			if (currentFrame > 3.0f)
-			{
-				currentFrame -= 3.0f;
-			}
-			heroSprite.setTextureRect(sf::IntRect(96 * int(currentFrame), 0, 96, 96));
-			heroSprite.move(0.0f, 0.1f*time);
-		}
-
+		MainCharacter.Update();
 
 		window.clear();
-		window.draw(heroSprite);
+		window.draw(MainCharacter.CharacterSprite);
 		window.display();
 	}
 
