@@ -2,12 +2,20 @@
 #include "SFML/Graphics.hpp"
 
 
-
 int main()
 {
-
 	sf::RenderWindow window(sf::VideoMode(800, 600), "My SFML C++ Game");
-	sf::CircleShape shape(50.0f);
+	
+	sf::Image heroImage;
+	heroImage.loadFromFile("images/hero.png");
+
+	sf::Texture heroTexture;
+	heroTexture.loadFromImage(heroImage);
+
+	sf::Sprite heroSprite;
+	heroSprite.setTexture(heroTexture);
+	heroSprite.setPosition(50, 25);
+
 
 	while (window.isOpen())
 	{
@@ -20,7 +28,7 @@ int main()
 			}
 		}
 		window.clear();
-		window.draw(shape);
+		window.draw(heroSprite);
 		window.display();
 	}
 
