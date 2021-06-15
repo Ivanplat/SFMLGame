@@ -1,8 +1,16 @@
 #pragma once
 #include <iostream>
 #include "SFML/Graphics.hpp"
+
+/*GameLogic class as sigletone pattern*/
+
 class GameLogic
 {
+public:
+	GameLogic& operator=(const GameLogic&) = delete;
+	GameLogic& operator=(const GameLogic&&) = delete;
+	GameLogic(const GameLogic&) = delete;
+	GameLogic(const GameLogic&&) = delete;
 public:
 	static GameLogic* Instance();
 	int CheckPlayerDirection();

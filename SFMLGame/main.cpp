@@ -4,6 +4,7 @@
 #include "GameLogic.h"
 #include "Character.h"
 #include "Map.h"
+#include "Window.h"
 
 #include "GlobalDefiner.h"
 
@@ -12,31 +13,22 @@ int main()
 {
 	GameLog::Instance();
 	GameLogic::Instance();
+	Window::Instance();
 
-	sf::RenderWindow window(sf::VideoMode(800, 600), "My SFML C++ Game");
-	
+	GameWindow->Init();
+
 	Character MainCharacter("hero.png", 250.0f, 250.0f, 96.0f, 96.0f);
 	Map GameMap("map.png");
 
-	float currentFrame = 0.0f;
-
-	while (window.isOpen())
+	while (GameWindow->MainWindow->isOpen())
 	{
 		Game->UpdateTime();
-
-		sf::Event e;
-		while (window.pollEvent(e))
-		{
-			if (e.type == sf::Event::Closed)
-			{
-				window.close();
-			}
-		}
+		GameWindow->EventHandler();
 		MainCharacter.Update();
-		window.clear();
-		GameMap.DrawMap(window);
-		window.draw(MainCharacter.CharacterSprite);
-		window.display();
+		GameWindow->MainWindow->clear();
+		GameMap.DrawMap(*GameWindow->MainWindow);
+		GameWindow->MainWindow->draw(MainCharacter.CharacterSprite);
+		GameWindow->MainWindow->display();
 	}
 
 	return 0;

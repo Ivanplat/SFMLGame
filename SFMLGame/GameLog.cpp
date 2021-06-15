@@ -15,6 +15,8 @@ void GameLog::ShowCurretPath()
 void GameLog::ShowErrorMessage(std::string message)
 {
 	HWND hWnd{};
-	MessageBox(hWnd, L"Message", L"Error", MB_ICONERROR);
+	std::wstring w(message.begin(), message.end());
+	LPCWSTR m = w.c_str();
+	MessageBox(hWnd, m, L"Error", MB_ICONERROR);
 }
 
