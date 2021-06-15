@@ -7,17 +7,17 @@
 class Window
 {
 public:
-	Window& operator=(const Window&) = delete;
-	Window& operator=(const Window&&) = delete;
-	Window(const Window&) = delete;
-	Window(const Window&&) = delete;
+	Window& operator=(const Window&) = delete;	// Delete assigment and copy operations for this class
+	Window& operator=(const Window&&) = delete; // Delete assigment and copy operations for this class
+	Window(const Window&) = delete;				// Delete assigment and copy operations for this class
+	Window(const Window&&) = delete;			// Delete assigment and copy operations for this class
 public:
-	static Window* Instance();
-	void Init();
-	void EventHandler();
+	static Window* Instance();					//Function for getting the singletone instance
+	void Init();								//Initialization the window	
+	void EventHandler();						//Handle the events in while-loop
 public:
 	sf::RenderWindow* MainWindow;
 private:
-	Window() = default;
+	Window() = default;							
 };
 
