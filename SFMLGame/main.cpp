@@ -28,6 +28,24 @@ int main()
 				window.close();
 			}
 		}
+		if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || (sf::Keyboard::isKeyPressed(sf::Keyboard::A))))
+		{
+			heroSprite.move(-0.1f, 0.0f);
+		}
+		if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || (sf::Keyboard::isKeyPressed(sf::Keyboard::D))))
+		{
+			heroSprite.move(0.1f, 0.0f);
+		}
+		if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || (sf::Keyboard::isKeyPressed(sf::Keyboard::W))))
+		{
+			heroSprite.move(0.0f, -0.1f);
+		}
+		if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Down) || (sf::Keyboard::isKeyPressed(sf::Keyboard::S))))
+		{
+			heroSprite.move(0.0f, 0.1f);
+		}
+
+
 		window.clear();
 		window.draw(heroSprite);
 		window.display();
