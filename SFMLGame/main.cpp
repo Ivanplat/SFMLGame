@@ -3,6 +3,7 @@
 #include "GameLog.h"
 #include "GameLogic.h"
 #include "Character.h"
+#include "Map.h"
 
 #include "GlobalDefiner.h"
 
@@ -15,6 +16,7 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(800, 600), "My SFML C++ Game");
 	
 	Character MainCharacter("hero.png", 250.0f, 250.0f, 96.0f, 96.0f);
+	Map GameMap("map.png");
 
 	float currentFrame = 0.0f;
 
@@ -31,8 +33,8 @@ int main()
 			}
 		}
 		MainCharacter.Update();
-
 		window.clear();
+		GameMap.DrawMap(window);
 		window.draw(MainCharacter.CharacterSprite);
 		window.display();
 	}
