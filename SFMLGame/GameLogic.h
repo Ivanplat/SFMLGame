@@ -17,6 +17,7 @@ public:
 	int CheckPlayerDirection();							//Returns value from 0 to 3, but in case of no direction returns -1	
 	void UpdateTime();									//Updating the game time
 	void UpdateFrame();									//Updating the game frame
+	int GetCameraAction();
 public:
 	int GetCurrentFrame();
 	float GetTime();
