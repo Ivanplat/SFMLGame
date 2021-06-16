@@ -2,6 +2,17 @@
 #include "GameLog.h"
 
 
+GameLogic::~GameLogic()
+{
+	for (auto i : GameObjects)
+	{
+		if (i)
+		{
+			delete i;
+		}
+	}
+}
+
 GameLogic* GameLogic::Instance()
 {
     static GameLogic gl;

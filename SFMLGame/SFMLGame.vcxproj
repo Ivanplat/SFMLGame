@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaseActorComponent.cpp" />
+    <ClCompile Include="BaseClass.cpp" />
     <ClCompile Include="BaseGameActor.cpp" />
     <ClCompile Include="BaseGameObject.cpp" />
     <ClCompile Include="Character.cpp" />
@@ -162,10 +163,12 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="PlayerCamera.cpp" />
     <ClCompile Include="PlayerScoreComponent.cpp" />
+    <ClCompile Include="RenderText.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseActorComponent.h" />
+    <ClInclude Include="BaseClass.h" />
     <ClInclude Include="BaseGameActor.h" />
     <ClInclude Include="BaseGameObject.h" />
     <ClInclude Include="Character.h" />
@@ -176,6 +179,7 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="PlayerCamera.h" />
     <ClInclude Include="PlayerScoreComponent.h" />
+    <ClInclude Include="RenderText.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

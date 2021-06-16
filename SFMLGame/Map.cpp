@@ -85,8 +85,7 @@ void Map::InteractWithMap(BaseGameActor* Caller)
 				}
 				if (MapTitle[i][j] == 's')
 				{
-					Char->X = 300;
-					Char->Y = 300;
+					Char->ScoreComponent->UpdateScore(1);
 					MapTitle[i][j] = ' ';
 				}
 			}
